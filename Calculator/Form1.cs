@@ -12,13 +12,13 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-       public Core core = new Core();
+        public Core core = new Core();
         public Form1()
         {
             InitializeComponent();
-        
+
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -36,9 +36,9 @@ namespace Calculator
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
+
             textBox1.Text += "1";
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -83,39 +83,88 @@ namespace Calculator
 
         private void button10_Click(object sender, EventArgs e)
         {
-            core.Current = Convert.ToDouble(textBox1.Text);
-            core.Add();
-            textBox1.Clear();
-
+            if (textBox1.Text.Length == 0)
+            {
+                MessageBox.Show("please enter a number");
+            }
+            else
+            {
+                core.Current = Convert.ToDouble(textBox1.Text);
+                core.Add();
+                label1.Text = Convert.ToString(core.z + " +");
+                textBox1.Clear();
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            core.Current = Convert.ToDouble(textBox1.Text);
-            core.substract();
-            textBox1.Clear();
+            if (textBox1.Text.Length == 0)
+            {
+                MessageBox.Show("please enter a number");
+            }
+            else
+            {
+                core.Current = Convert.ToDouble(textBox1.Text);
+                core.substract();
+                label1.Text = Convert.ToString(core.z + " -");
+                textBox1.Clear();
+            }
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            core.Current = Convert.ToDouble(textBox1.Text);
-            core.multiply();
-            textBox1.Clear();
-
+            if (textBox1.Text.Length == 0)
+            {
+                MessageBox.Show("please enter a number");
+            }
+            else
+            {
+                core.Current = Convert.ToDouble(textBox1.Text);
+                core.multiply();
+                label1.Text = Convert.ToString(core.z + " *");
+                textBox1.Clear();
+            }
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            core.Current = Convert.ToDouble(textBox1.Text);
-            core.divide();
-            textBox1.Clear();
+            if (textBox1.Text.Length == 0)
+            {
+                MessageBox.Show("please enter a number");
+            }
+            else
+            {
+                core.Current = Convert.ToDouble(textBox1.Text);
+                core.divide();
+                label1.Text = Convert.ToString(core.z + " /");
+                textBox1.Clear();
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            core.Current = Convert.ToDouble(textBox1.Text);
-            core.equals();
-            textBox1.Text = Convert.ToString(core.Result);
+            if (textBox1.Text.Length == 0 && core.y != 0)
+            {
+                MessageBox.Show("please enter a number");
+            }
+            else
+            {
+                core.Current = Convert.ToDouble(textBox1.Text);
+                core.equals();
+                textBox1.Text = Convert.ToString(core.Result);
+                core.clearArray();
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+
+            if (!char.IsDigit(c) && c != 8)
+            {
+                e.Handled = true;
+            }
+           
         }
     }
 }
