@@ -44,6 +44,8 @@
             this.button14 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button15 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -178,9 +180,9 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(8, 198);
+            this.button14.Location = new System.Drawing.Point(8, 223);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(96, 52);
+            this.button14.Size = new System.Drawing.Size(96, 27);
             this.button14.TabIndex = 14;
             this.button14.Text = "=";
             this.button14.UseVisualStyleBackColor = true;
@@ -204,11 +206,31 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 16;
             // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(42, 199);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(27, 23);
+            this.button15.TabIndex = 17;
+            this.button15.Text = "0";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(196, 262);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button15);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button14);
@@ -251,6 +273,8 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Label label2;
 
     }
 }

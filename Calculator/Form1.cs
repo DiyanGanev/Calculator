@@ -91,7 +91,7 @@ namespace Calculator
             {
                 core.Current = Convert.ToDouble(textBox1.Text);
                 core.Add();
-                label1.Text = Convert.ToString(core.z + " +");
+                label1.Text = Convert.ToString(core.Current + " +");
                 textBox1.Clear();
             }
         }
@@ -106,7 +106,7 @@ namespace Calculator
             {
                 core.Current = Convert.ToDouble(textBox1.Text);
                 core.substract();
-                label1.Text = Convert.ToString(core.z + " -");
+                label1.Text = Convert.ToString(core.Current + " -");
                 textBox1.Clear();
             }
         }
@@ -121,7 +121,7 @@ namespace Calculator
             {
                 core.Current = Convert.ToDouble(textBox1.Text);
                 core.multiply();
-                label1.Text = Convert.ToString(core.z + " *");
+                label1.Text = Convert.ToString(core.Current + " *");
                 textBox1.Clear();
             }
         }
@@ -136,14 +136,14 @@ namespace Calculator
             {
                 core.Current = Convert.ToDouble(textBox1.Text);
                 core.divide();
-                label1.Text = Convert.ToString(core.z + " /");
+                label1.Text = Convert.ToString(core.Current + " /");
                 textBox1.Clear();
             }
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length == 0 && core.y != 0)
+            if (textBox1.Text.Length == 0 )
             {
                 MessageBox.Show("please enter a number");
             }
@@ -152,6 +152,7 @@ namespace Calculator
                 core.Current = Convert.ToDouble(textBox1.Text);
                 core.equals();
                 textBox1.Text = Convert.ToString(core.Result);
+                label2.Text = Convert.ToString(core.y);
                 core.clearArray();
             }
         }
@@ -165,6 +166,11 @@ namespace Calculator
                 e.Handled = true;
             }
            
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "0";
         }
     }
 }
